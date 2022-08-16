@@ -1,0 +1,70 @@
+{
+  "name": "all-about-clubs",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@craco/craco": "^6.4.5",
+    "@formatjs/intl-pluralrules": "^4.1.4",
+    "@formatjs/intl-relativetimeformat": "^9.3.1",
+    "@mui/icons-material": "^5.8.4",
+    "@mui/material": "^5.10.0",
+    "dayjs": "^1.11.5",
+    "formik": "^2.2.9",
+    "history": "^4.10.1",
+    "hoist-non-react-statics": "^3.3.2",
+    "intl": "^1.2.5",
+    "license-checker-webpack-plugin": "^0.2.1",
+    "localforage": "^1.10.0",
+    "lodash": "^4.17.21",
+    "mobx": "^6.6.1",
+    "mobx-persist-store": "^1.0.6",
+    "mobx-react": "^7.5.2",
+    "query-string": "^7.1.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-intl": "^5.20.12",
+    "react-router": "^5.3.3",
+    "react-router-dom": "^5.3.3",
+    "react-scripts": "^4.0.3",
+    "styled-components": "^5.3.5",
+    "yup": "^0.32.11"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "build:withLicenses": "craco build",
+    "prettier": "prettier --write '**/*.{js,jsx,ts,tsx,gql,css,json,html}'"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "resolutions": {
+    "@mui/styled-engine": "npm:@mui/styled-engine-sc@^5.0.3"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.182",
+    "@types/node": "^16.11.49",
+    "@types/react": "^17.0.29",
+    "@types/react-dom": "^17.0.9",
+    "@types/react-router": "^5.1.18",
+    "@types/react-router-dom": "^5.3.3",
+    "@types/webpack-env": "^1.16.2",
+    "@types/yup": "^0.29.14",
+    "prettier": "^2.7.1",
+    "typescript": "^4.4.4"
+  }
+}
