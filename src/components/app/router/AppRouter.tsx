@@ -12,18 +12,20 @@ import { NoAuthOnlyRoute } from "./NoAuthOnlyRoute";
 import { PrivateRoute } from "./PrivateRoute";
 import { Routes } from "./Routes";
 import { RoutingManager } from "./RoutingManager";
+import { ClubsContainerSite } from "../../clubs/sites/ClubsContainerSite";
 
 export const AppRouter = observer(() => (
     <>
         <Router history={history}>
             <RoutingManager>
                 <CustomSwitch>
-                    <NoAuthOnlyRoute exact path={Routes.ROOT}>
+                    <ClubsContainerSite />
+                    {/* <NoAuthOnlyRoute exact path={Routes.ROOT}>
                         <AuthLoginSite />
                     </NoAuthOnlyRoute>
                     <PrivateRoute path={DashboardRoutes.ROOT}>
                         <DashboardContainerSite />
-                    </PrivateRoute>
+                    </PrivateRoute> */}
                 </CustomSwitch>
             </RoutingManager>
         </Router>
