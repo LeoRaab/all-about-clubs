@@ -1,4 +1,4 @@
 export const Styles = {
-    PRIMARY_COLOR: "rgb(253, 128, 72)",
-    PRIMARY_COLOR_ACTIVE: "rgb(253, 113, 48)",
+    PRIMARY_COLOR: "rgb(1,193,59)",
+    PRIMARY_COLOR_ACTIVE: "rgb(134, 254, 170)",
 };
