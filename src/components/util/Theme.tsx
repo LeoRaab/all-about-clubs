@@ -7,7 +7,7 @@ export const theme = createTheme({
             main: Styles.PRIMARY_COLOR,
         },
         secondary: {
-            main: Styles.PRIMARY_COLOR,
+            main: Styles.SECONDARY_COLOR,
         },
     },
     components: {
