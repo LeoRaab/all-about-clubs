@@ -3,6 +3,7 @@
 import * as Config from "../config";
 import { APIError } from "../errors/APIError";
 import { authStore, ICredentials } from "../stores/AuthStore";
+import { IClub } from "../stores/ClubsStore";
 
 export const STATUS_CODE_UNAUTHORIZED = 401;
 
@@ -17,6 +18,28 @@ const handleUnauthorizedError = (error: APIError) => {
 };
 
 export const API = {
+    async loadClubs(): Promise<IClub[]> {
+        try {
+            const response = await fetch(`${Config.API_BASE_URL}/hiring/clubs.json`, {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+            });
+
+            if (!response.ok) {
+                throw new APIError(response.status, response.statusText);
+            }
+
+            return response.json();
+        } catch (error) {
+            // if (error instanceof APIError) {
+            //     handleUnauthorizedError(error);
+            // }
+            throw error;
+        }
+    },
+
     async loginWithPassword(options: { username: string; password: string }): Promise<ICredentials> {
         try {
             const response = await fetch(`${Config.API_BASE_URL}/api/v1/auth/login`, {
