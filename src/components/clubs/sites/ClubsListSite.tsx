@@ -42,7 +42,7 @@ const ClubsListSite = observer(() => {
 
     return (
         <>
-            <HeaderBar title={t("common.app_name")} backButton={false}>
+            <HeaderBar title={t("common.app_name")}>
                 <IconButton color="secondary" onClick={handleSortClick}>
                     <SortIcon />
                 </IconButton>
