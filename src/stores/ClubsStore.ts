@@ -9,7 +9,7 @@ import { APIError } from "../errors/APIError";
 import { API, STATUS_CODE_UNAUTHORIZED } from "../network/API";
 
 export interface IClub {
-    id: number;
+    id: string;
     name: string;
     country: string;
     value: number;
