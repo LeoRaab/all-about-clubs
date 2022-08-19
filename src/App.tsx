@@ -5,11 +5,11 @@ import { RawIntlProvider } from "react-intl";
 import { AppRouter } from "./components/app/router/AppRouter";
 import { theme } from "./components/util/Theme";
 import { intl } from "./i18n/util";
-import { authStore } from "./stores/AuthStore";
+import { clubsStore } from "./stores/ClubsStore";
 import { generalStore } from "./stores/GeneralStore";
 
 const App: React.FunctionComponent = observer(() => {
-    if (!authStore.isRehydrated) {
+    if (!clubsStore.isRehydrated) {
         return null;
     }
 
