@@ -1,13 +1,14 @@
 import { List, ListItemAvatar, Avatar, ListItemText, Typography, Divider, ListItemButton } from "@mui/material";
 import { observer } from "mobx-react";
 import React from "react";
+import { t } from "../../i18n/util";
 import { clubsStore } from "../../stores/ClubsStore";
 import { pushRoute } from "../app/router/history";
 import { ClubsRoutes } from "./routes/ClubsRoutes";
 
 export const ClubsList = observer(() => {
     const handleClubClick = (clubId: string) => {
-        pushRoute(ClubsRoutes.DETAIL, { params: { clubId: clubId.toString() } });
+        pushRoute(ClubsRoutes.DETAIL, { params: { clubId: clubId } });
     };
 
     return (
@@ -23,14 +24,16 @@ export const ClubsList = observer(() => {
                             secondary={
                                 <React.Fragment>
                                     <Typography
-                                        sx={{ display: "inline" }}
+                                        sx={{ display: "inline", marginRight: "0.4rem" }}
                                         component="span"
                                         variant="body2"
                                         color="text.primary"
                                     >
                                         {club.country}
                                     </Typography>
-                                    {` ${club.value} Millionen Euro`}
+                                    {t("screen.list.club_value", {
+                                        value: club.value,
+                                    })}
                                 </React.Fragment>
                             }
                         />
