@@ -11,30 +11,32 @@ interface HeaderBarProps {
 
 const HeaderBar = ({ title, backTo, children }: HeaderBarProps) => {
     return (
-        <Box>
-            <AppBar position="static">
-                <Toolbar>
-                    {backTo && (
-                        <IconButton
-                            size="large"
-                            edge="start"
-                            color="secondary"
-                            aria-label="back"
-                            sx={{ mr: 2 }}
-                            onClick={() => {
-                                pushRoute(backTo);
-                            }}
-                        >
-                            <BackIcon />
-                        </IconButton>
-                    )}
-                    <Typography variant="h6" color={Styles.SECONDARY_COLOR} component="div" sx={{ flexGrow: 1 }}>
-                        {title}
-                    </Typography>
-                    {children}
-                </Toolbar>
-            </AppBar>
-        </Box>
+        <div style={{ height: "4rem" }}>
+            <Box>
+                <AppBar position="fixed">
+                    <Toolbar>
+                        {backTo && (
+                            <IconButton
+                                size="large"
+                                edge="start"
+                                color="secondary"
+                                aria-label="back"
+                                sx={{ mr: 2 }}
+                                onClick={() => {
+                                    pushRoute(backTo);
+                                }}
+                            >
+                                <BackIcon />
+                            </IconButton>
+                        )}
+                        <Typography variant="h6" color={Styles.SECONDARY_COLOR} component="div" sx={{ flexGrow: 1 }}>
+                            {title}
+                        </Typography>
+                        {children}
+                    </Toolbar>
+                </AppBar>
+            </Box>
+        </div>
     );
 };
 
