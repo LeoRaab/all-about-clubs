@@ -11,7 +11,12 @@
     "screen.login.form.email.label": "E-Mail",
     "screen.login.form.password.label": "Password",
     "screen.dashboard.hello": "Welcome",
+    "screen.list.club_value": "{value} milliion euros",
     "screen.list.error_during_loading": "An error occured while loading clubs.",
+    "screen.detail.club_value": "The club <bold>{name}</bold> from {country} is worth {value} million euros.",
+    "screen.detail.european_titles": "<bold>{name}</bold> has managed to achieve {european_titles} victories at the European level so far.",
+    "screen.detail.error_no_parameters": "No parameters have been entered.",
+    "screen.detail.error_wrong_parameters": "No club could be found with the specified parameters.",
     "language.german": "German",
     "language.english": "English"
 }
