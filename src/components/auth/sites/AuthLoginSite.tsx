@@ -7,7 +7,7 @@ import { t } from "../../../i18n/util";
 import { authStore } from "../../../stores/AuthStore";
 import { generalStore } from "../../../stores/GeneralStore";
 import { pushRoute } from "../../app/router/history";
-import { DashboardRoutes } from "../../dashboard/router/DashboardRoutes";
+import { Routes } from "../../app/router/Routes";
 import { CustomInputField } from "../../ui/CustomInputField";
 import { ImageLogo } from "../../util/Images";
 import { Styles } from "../../util/Styles";
@@ -32,7 +32,7 @@ export const AuthLoginSite = observer(() => {
                     setError(t("screen.login.error_during_login"));
                 }
             } else {
-                pushRoute(DashboardRoutes.ROOT);
+                pushRoute(Routes.ROOT);
             }
         } catch (error) {
             setError(t("screen.login.error_during_login"));

@@ -2,8 +2,8 @@ import { observer } from "mobx-react";
 import * as React from "react";
 import { Redirect, Route, useLocation } from "react-router-dom";
 import { authStore } from "../../../stores/AuthStore";
-import { DashboardRoutes } from "../../dashboard/router/DashboardRoutes";
 import { LoadingOverlay } from "../../ui/LoadingOverlay";
+import { Routes } from "./Routes";
 
 export const NoAuthOnlyRoute = observer(({ children, ...props }: React.ComponentProps<typeof Route>) => {
     const location = useLocation();
@@ -19,7 +19,7 @@ export const NoAuthOnlyRoute = observer(({ children, ...props }: React.Component
             ) : (
                 <Redirect
                     to={{
-                        pathname: DashboardRoutes.ROOT,
+                        pathname: Routes.ROOT,
                         state: { from: location },
                     }}
                 />
