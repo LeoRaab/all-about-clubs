@@ -15,7 +15,7 @@ export interface IClub {
 }
 
 class Clubs {
-    clubs: IClub[] | null = null;
+    clubsCollection: IClub[] | null = null;
     sortedBy: keyof IClub = "name";
     sortingMode: "asc" | "desc" = "asc";
     error: APIError | null = null;
@@ -32,7 +32,7 @@ class Clubs {
         try {
             await makePersistable(this, {
                 name: "clubs",
-                properties: ["clubs"],
+                properties: ["clubsCollection"],
                 storage: localforage,
             });
         } catch (error) {
@@ -52,7 +52,7 @@ class Clubs {
 
             runInAction(() => {
                 this.error = null;
-                this.clubs = clubs;
+                this.clubsCollection = clubs;
                 this.isLoading = false;
             });
         } catch (error) {
@@ -67,15 +67,15 @@ class Clubs {
     };
 
     get sortedClubs(): IClub[] {
-        return _.orderBy(this.clubs?.slice(), this.sortedBy, this.sortingMode);
+        return _.orderBy(this.clubsCollection?.slice(), this.sortedBy, this.sortingMode);
     }
 
     getClubById(clubId: string): IClub | undefined {
-        return this.clubs?.find((club) => club.id === clubId);
+        return this.clubsCollection?.find((club) => club.id === clubId);
     }
 
     getClubByArrayId(clubArrayId: number): IClub | undefined {
-        return this.clubs?.slice()[clubArrayId];
+        return this.clubsCollection?.slice()[clubArrayId];
     }
 
     changeSorting(sortedBy: keyof IClub, sortingMode: "asc" | "desc" = "asc") {
@@ -86,7 +86,7 @@ class Clubs {
     private wipe(error: APIError | null) {
         this.error = error;
         this.isLoading = false;
-        this.clubs = null;
+        this.clubsCollection = null;
     }
 }
 
