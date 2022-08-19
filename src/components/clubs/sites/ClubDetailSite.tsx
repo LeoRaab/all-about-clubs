@@ -5,7 +5,7 @@ import { useParams } from "react-router";
 import { t } from "../../../i18n/util";
 import { clubsStore, IClub } from "../../../stores/ClubsStore";
 import { ErrorMessage } from "../../ui/ErrorMessage";
-import HeaderBar from "../../ui/HeaderBar";
+import HeaderBar from "../../shared/HeaderBar";
 import { LoadingOverlay } from "../../ui/LoadingOverlay";
 import { ImageClub } from "../../util/Images";
 import { Styles } from "../../util/Styles";

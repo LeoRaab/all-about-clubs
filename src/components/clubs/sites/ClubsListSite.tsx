@@ -1,6 +1,6 @@
 import IconButton from "@mui/material/IconButton";
 import { t } from "../../../i18n/util";
-import HeaderBar from "../../ui/HeaderBar";
+import HeaderBar from "../../shared/HeaderBar";
 import SortIcon from "@mui/icons-material/Sort";
 import { clubsStore } from "../../../stores/ClubsStore";
 import React from "react";
