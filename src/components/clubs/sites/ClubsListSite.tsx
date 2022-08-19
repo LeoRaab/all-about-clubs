@@ -7,6 +7,8 @@ import React from "react";
 import { observer } from "mobx-react";
 import { ClubsList } from "../ClubsList";
 import { action } from "mobx";
+import { LoadingOverlay } from "../../ui/LoadingOverlay";
+import { ErrorMessage } from "../../ui/ErrorMessage";
 
 const ClubsListSite = observer(() => {
     const [error, setError] = React.useState<string>();
@@ -36,9 +38,9 @@ const ClubsListSite = observer(() => {
         }
     });
 
-    // if (!clubsStore.isRehydrated) {
-    //     return null;
-    // }
+    if (!clubsStore.isRehydrated) {
+        return null;
+    }
 
     return (
         <>
@@ -48,6 +50,8 @@ const ClubsListSite = observer(() => {
                 </IconButton>
             </HeaderBar>
             <ClubsList />
+            {clubsStore.isLoading && <LoadingOverlay />}
+            {error && <ErrorMessage>{error}</ErrorMessage>}
         </>
     );
 });
