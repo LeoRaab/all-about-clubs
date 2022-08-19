@@ -4,7 +4,7 @@ import { Styles } from "../util/Styles";
 import { pushRoute } from "../app/router/history";
 
 interface HeaderBarProps {
-    title: string;
+    title?: string;
     backTo?: string;
     children?: JSX.Element;
 }
