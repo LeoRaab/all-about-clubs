@@ -1,12 +1,9 @@
 import localforage from "localforage";
-import _, { orderBy } from "lodash";
-import { sortBy } from "lodash";
+import _ from "lodash";
 import { makeAutoObservable, runInAction } from "mobx";
 import { makePersistable } from "mobx-persist-store";
-import { string } from "yup";
-import * as config from "../config";
 import { APIError } from "../errors/APIError";
-import { API, STATUS_CODE_UNAUTHORIZED } from "../network/API";
+import { API } from "../network/API";
 
 export interface IClub {
     id: string;
@@ -69,17 +66,21 @@ class Clubs {
         }
     };
 
-    changeSorting(sortedBy: keyof IClub, sortingMode: "asc" | "desc" = "asc") {
-        this.sortedBy = sortedBy;
-        this.sortingMode = sortingMode;
-    }
-
     get sortedClubs(): IClub[] {
         return _.orderBy(this.clubs?.slice(), this.sortedBy, this.sortingMode);
     }
 
-    get sorting() {
-        return this.sortedBy;
+    getClubById(clubId: string): IClub | undefined {
+        return this.clubs?.find((club) => club.id === clubId);
+    }
+
+    getClubByArrayId(clubArrayId: number): IClub | undefined {
+        return this.clubs?.slice()[clubArrayId];
+    }
+
+    changeSorting(sortedBy: keyof IClub, sortingMode: "asc" | "desc" = "asc") {
+        this.sortedBy = sortedBy;
+        this.sortingMode = sortingMode;
     }
 
     private wipe(error: APIError | null) {
