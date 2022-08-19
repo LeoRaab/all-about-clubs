@@ -5,8 +5,9 @@ import english from "./en.json";
 import { generalStore } from "../stores/GeneralStore";
 import { ILocales } from "./ILocales";
 import { action } from "mobx";
+import { ReactNode } from "react";
 
-const DEFAULT_LOCALE = "en";
+const DEFAULT_LOCALE = "de";
 
 type IMessages = {
     [locale in ILocales]: {
@@ -46,8 +47,14 @@ const setLocale = action("setLocale", (locale: ILocales) => {
     console.log(`%cSet locale to "${locale}".`, "background: #eee; color: #666;");
 });
 
-const t = (messageId: MessageIDS, values?: Record<string, PrimitiveType>) => {
+function t(messageId: MessageIDS, values?: Record<string, PrimitiveType>): string;
+function t(messageId: MessageIDS, values?: Record<string, ReactNode>): ReactNode;
+
+function t(
+    messageId: MessageIDS,
+    values?: Record<string, PrimitiveType> | Record<string, ReactNode>,
+): string | ReactNode {
     return intl.formatMessage({ id: messageId }, values);
-};
+}
 
 export { DEFAULT_LOCALE, intl, intlMessages, setLocale, t };
