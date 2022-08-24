@@ -1,2 +1,2 @@
-var ENV_API_BASE_URL = "";
+var ENV_API_BASE_URL = "https://public.allaboutapps.at";
 var ENV_BASE_NAME = "";
