@@ -11,7 +11,7 @@ interface HeaderBarProps {
 
 const HeaderBar = ({ title, backTo, children }: HeaderBarProps) => {
     return (
-        <div style={{ height: "4rem" }}>
+        <div style={{ height: "3.5rem" }}>
             <Box>
                 <AppBar position="fixed">
                     <Toolbar>
